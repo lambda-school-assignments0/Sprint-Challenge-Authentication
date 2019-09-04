@@ -6,10 +6,10 @@ describe("auth-router.js", () => {
     describe("POST '/register'", () => {
         // test status code
         it("should return 201", async () => {
-            const res = await request(auth)
-                .post("/register")
-                .send({ username: "testuser1", password: "password123" })
-                .set("Accept", "application/json");
+            const res = await request(auth).post("/register", {
+                username: "testuser4",
+                password: "password123"
+            });
             expect(res.status).toBe(201);
         });
 
